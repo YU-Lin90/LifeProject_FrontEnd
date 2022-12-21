@@ -1,0 +1,132 @@
+:root {
+  /* 主色 */
+  --mainColor: #d6faff;
+  /* 副色 */
+  --subColor: #ffbdbd;
+  /* 副色禁止 */
+  --subColorDisabled: #dc6363;  
+  /* 導覽列高度 */
+  --navHeight: 60px;
+  /* 全視高減導覽列高度 */
+  --vh100NoNavHeight: calc(100vh - var(--navHeight));
+  // 圓角
+  --borderRadiusSet: 10px;
+  //按鈕padding
+  --buttonPadding: 8px;
+}
+//===============================================分隔線================================================
+//預設按鈕樣式
+.defaultButton{
+  font-weight: 600;
+  font-size: 18px;
+  background-color: var(--subColor);
+  border-radius: var(--borderRadiusSet);
+  text-align: center;
+  padding: var(--buttonPadding);
+  cursor: pointer;
+  width: fit-content;
+}
+.defaultButton:hover {
+  background-color: #ffccdd;
+  color: #333;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(74, 167, 182, 0.3);
+}
+.defaultButton.disabled{
+  background-color: var(--subColorDisabled);
+  color: #eee;
+  box-shadow: none;
+  cursor:not-allowed;
+}
+//===============================================分隔線================================================
+//導覽列
+nav.navBar {
+  position: sticky;
+  top: 0;
+  height: var(--navHeight);
+  background-color: var(--mainColor);
+  width: 100%;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(74, 167, 182, 0.3);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+
+  //===============================================分隔線================================================
+  .navLogo {
+    cursor: pointer;
+    width: 33.33333%;
+    text-align: start;
+  }
+
+  //===============================================分隔線================================================
+  .navChooseLanguage {
+    width: 33.33333%;
+  }
+
+  //===============================================分隔線================================================
+  .navLoginButton {
+    font-weight: 600;
+    font-size: 18px;
+    background-color: var(--subColor);
+    border-radius: var(--borderRadiusSet);
+    text-align: center;
+    padding: var(--buttonPadding);
+    cursor: pointer;
+    width: fit-content;
+  }
+
+  .navLoginButton:hover {
+    background-color: #ffccdd;
+    color: #333;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(74, 167, 182, 0.3);
+  }
+}
+
+//===============================================分隔線================================================
+// 導覽列下內容
+.underNavBar {
+  min-height: var(--vh100NoNavHeight);
+  // min-height: 2000px;
+  position: relative;
+  padding-top: 50px;
+  background: linear-gradient(120deg, #fff 0%, #fff 30%, #ffbdbd 45%, #ffccdd 55%, #fdffb2 65%, #c5e5ff 75%, #d6faff 85%, #d6ffee 100%);
+}
+
+//===============================================分隔線================================================
+//登入頁
+.loginPageFrame {
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  min-width: 300px;
+  border-radius: var(--borderRadiusSet);
+  background-color: #eee;
+  min-height: 500px;
+  transition: .5s;
+  overflow: hidden;
+
+  .switchButton {
+    width: 50%;
+    padding: 10px;
+    background-color: #ccc;
+    cursor: pointer;
+  }
+
+  .switchButton.active {
+    background-color: transparent;
+  }
+
+  .loginPageContent {
+    padding: 20px;
+
+    .loginInputFrame {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+}
