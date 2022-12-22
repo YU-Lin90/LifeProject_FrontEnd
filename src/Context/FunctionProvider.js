@@ -19,6 +19,9 @@ export const FunctionProvider = ({ children }) => {
       body: postData,
     });
     const res = await r.json();
+    if (res.errorType && res.errorType === 'DisableToken') {
+      localStorage.removeItem(who);
+    }
     return res;
   };
   //GET 回傳RES
@@ -32,6 +35,9 @@ export const FunctionProvider = ({ children }) => {
       },
     });
     const res = await r.json();
+    if (res.errorType && res.errorType === 'DisableToken') {
+      localStorage.removeItem(who);
+    }
     return res;
   };
   //===============================================分隔線================================================

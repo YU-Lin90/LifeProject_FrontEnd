@@ -12,7 +12,7 @@ function Home() {
           navi('/weather');
         }}
       >
-        氣象
+        氣象預報
       </p>
     </>
   );

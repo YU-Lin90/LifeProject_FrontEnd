@@ -4,7 +4,7 @@
   /* 副色 */
   --subColor: #ffbdbd;
   /* 副色禁止 */
-  --subColorDisabled: #dc6363;  
+  --subColorDisabled: #dc6363;
   /* 導覽列高度 */
   --navHeight: 60px;
   /* 全視高減導覽列高度 */
@@ -14,9 +14,36 @@
   //按鈕padding
   --buttonPadding: 8px;
 }
+
+//===============================================分隔線================================================
+//標題大小
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
 //===============================================分隔線================================================
 //預設按鈕樣式
-.defaultButton{
+.defaultButton {
   font-weight: 600;
   font-size: 18px;
   background-color: var(--subColor);
@@ -26,17 +53,20 @@
   cursor: pointer;
   width: fit-content;
 }
+
 .defaultButton:hover {
   background-color: #ffccdd;
   color: #333;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(74, 167, 182, 0.3);
 }
-.defaultButton.disabled{
+
+.defaultButton.disabled {
   background-color: var(--subColorDisabled);
   color: #eee;
   box-shadow: none;
-  cursor:not-allowed;
+  cursor: not-allowed;
 }
+
 //===============================================分隔線================================================
 //導覽列
 nav.navBar {

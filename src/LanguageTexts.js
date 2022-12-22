@@ -16,7 +16,7 @@ const logoutText = ['登出', 'ログアウト', 'logout'];
 //===============================================分隔線================================================
 //註冊/登入頁面使用
 const registText = ['註冊', '新規登録', 'Regist'];
-const accountText = ['帳號(信箱)', 'アカウント', 'Account'];
+const accountText = ['帳號(信箱)', 'アカウント(メール)', 'Account(Mail)'];
 const passwordText = ['密碼', 'パスワード', 'Passwoed'];
 const loginCheckAlertText = ['帳號或密碼不可為空', '', ''];
 //已經登入的文字(登入頁面阻擋)
@@ -34,6 +34,12 @@ const accpassWrongAlertText = [
   '帳號或密碼錯誤',
   'メールかパスワードが違います',
   'Mail or Password is wrong',
+];
+//帳號鎖定提示
+const accountLockAlertText = [
+  '帳號已被鎖定，請洽詢客服',
+  'アカウントはロックされました、サービスにご連絡してください。',
+  'Account has been locked. Please contact the service.',
 ];
 //===============================================分隔線================================================
 //清空
@@ -53,5 +59,6 @@ const textPack = {
   loginSuccessAlertText,
   accpassWrongAlertText,
   systemNetworkErrorAlertText,
+  accountLockAlertText,
 };
 export default textPack;

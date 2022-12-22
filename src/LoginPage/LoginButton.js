@@ -15,6 +15,7 @@ function LoginButton({ account, password, posting, setPosting }) {
     loginSuccessAlertText,
     accpassWrongAlertText,
     systemNetworkErrorAlertText,
+    accountLockAlertText,
   } = textPack;
   const { notLoginPostFetch } = useFunc();
   const navi = useNavigate();
@@ -46,8 +47,12 @@ function LoginButton({ account, password, posting, setPosting }) {
           }
         });
       } else {
-        if (res.errorType === 'textError') {
+        if (res.errorType === 'TextError') {
           Swal.fire(accpassWrongAlertText[laguage]).then(() => {
+            setPosting(false);
+          });
+        } else if (res.errorType === 'AccountLocked') {
+          Swal.fire(accountLockAlertText[laguage]).then(() => {
             setPosting(false);
           });
         }
