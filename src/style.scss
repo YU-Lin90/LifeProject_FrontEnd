@@ -158,5 +158,39 @@ nav.navBar {
       margin-right: auto;
     }
   }
+}
 
+//===============================================分隔線================================================
+.rwdCol2-3-4 {
+  width: 50%;
+}
+
+@media screen and (min-width:576px) {
+  .rwdCol2-3-4 {
+    width: 33.3333%;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .rwdCol2-3-4 {
+    width: 25%;
+  }
+}
+
+//===============================================分隔線================================================
+//天氣卡片
+.weatherCardCol {
+  padding: 10px;
+
+  .weatherCard {
+    border-radius: var(--borderRadiusSet);
+    border: 3px var(--subColor) solid;
+    padding: 5px;
+    background: linear-gradient(-45deg, #eee5 0%, #fff 82%, var(--mainColor), #ffccdd 88%, #fdffb2 91%, #c5e5ff 94%, #d6faff 97%, #d6ffee 100%);
+
+    p {
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+  }
 }
