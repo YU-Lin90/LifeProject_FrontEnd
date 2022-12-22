@@ -13,7 +13,6 @@ export const AuthProvider = ({ children }) => {
   //名稱
   const [authName, setAuthName] = useState('');
   //進入登入頁前頁紀錄
-  const [previousPage, setPreviousPage] = useState('');
   //===============================================分隔線================================================
   //登出函式
   const logoutAction = () => {
@@ -55,8 +54,6 @@ export const AuthProvider = ({ children }) => {
       value={{
         auth,
         setAuth,
-        previousPage,
-        setPreviousPage,
         logoutAction,
         authName,
         setAuthName,

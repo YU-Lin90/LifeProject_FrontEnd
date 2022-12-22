@@ -7,7 +7,7 @@ import { useAuth } from '../Context/AuthProvider';
 import { useLaguage } from '../Context/LaguageProvider';
 import { useNavigate } from 'react-router-dom';
 function LoginButton({ account, password, posting, setPosting }) {
-  const { previousPage, setAuth, setAuthName } = useAuth();
+  const { setAuth, setAuthName } = useAuth();
   const { laguage, setLaguage } = useLaguage();
   const {
     loginText,
@@ -17,7 +17,7 @@ function LoginButton({ account, password, posting, setPosting }) {
     systemNetworkErrorAlertText,
     accountLockAlertText,
   } = textPack;
-  const { notLoginPostFetch } = useFunc();
+  const { notLoginPostFetch, previousPage, setPreviousPage } = useFunc();
   const navi = useNavigate();
 
   const loginProcess = async () => {
@@ -41,7 +41,9 @@ function LoginButton({ account, password, posting, setPosting }) {
         localStorage.setItem('memberAuth', tokens);
         Swal.fire(loginSuccessAlertText[res.lang]).then(() => {
           if (previousPage !== '') {
-            navi(previousPage);
+            const dir = previousPage;
+            navi(dir);
+            setPreviousPage('');
           } else {
             navi('/');
           }

@@ -177,6 +177,12 @@ nav.navBar {
   }
 }
 
+@media screen and (min-width:1440px) {
+  .rwdCol2-3-4 {
+    width: 20%;
+  }
+}
+
 //===============================================分隔線================================================
 //天氣卡片
 .weatherCardCol {
@@ -192,5 +198,19 @@ nav.navBar {
       padding-top: 5px;
       padding-bottom: 5px;
     }
+  }
+}
+
+//===============================================分隔線================================================
+footer {
+  border-top: 5px var(--mainColor) solid;
+  padding: 10px;
+
+  .footerDivideLine {
+    margin: 20px auto;
+    background: linear-gradient(to right, var(--subColor), var(--mainColor) 50%, var(--subColor));
+    width: 90%;
+    height: 10px;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
   }
 }

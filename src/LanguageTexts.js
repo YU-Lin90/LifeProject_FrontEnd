@@ -13,6 +13,11 @@ const languageText = ['中文', '日本語', 'English'];
 //登入登出文字
 const loginText = ['登入', 'ログイン', 'login'];
 const logoutText = ['登出', 'ログアウト', 'logout'];
+const goToLoginText = [
+  '請先登入',
+  'ログインしてください',
+  'Please login first.',
+];
 //===============================================分隔線================================================
 //註冊/登入頁面使用
 const registText = ['註冊', '新規登録', 'Regist'];
@@ -60,5 +65,6 @@ const textPack = {
   accpassWrongAlertText,
   systemNetworkErrorAlertText,
   accountLockAlertText,
+  goToLoginText,
 };
 export default textPack;

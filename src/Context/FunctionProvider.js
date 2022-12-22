@@ -1,10 +1,10 @@
-import React, { useContext, createContext } from 'react';
+import React, { useContext, createContext, useState } from 'react';
 import siteAddress from '../AddressSetting';
-
 const FunctionContext = createContext(null);
 //常用的函式放在這裡管理
 export const FunctionProvider = ({ children }) => {
   const { fullAddress } = siteAddress;
+  const [previousPage, setPreviousPage] = useState('');
   //===============================================分隔線================================================
   //有帶登入檢查的FETCH
   //回傳RES                (API連結 ,哪方,post資料 json格式 )
@@ -68,6 +68,25 @@ export const FunctionProvider = ({ children }) => {
     return res;
   };
   //===============================================分隔線================================================
+  //頁面登入阻擋，重新導向
+  const pageLoginBlock = async () => {
+    const localToken = localStorage.getItem('memberAuth');
+    if (!localToken) {
+      return false;
+    }
+    try {
+      const res = await loginCheckGetFetch('login/loginCheck', 'memberAuth');
+      if (res.success) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  };
+  //===============================================分隔線================================================
   return (
     <FunctionContext.Provider
       value={{
@@ -75,6 +94,9 @@ export const FunctionProvider = ({ children }) => {
         loginCheckGetFetch,
         notLoginGetFetch,
         notLoginPostFetch,
+        previousPage,
+        setPreviousPage,
+        pageLoginBlock,
       }}
     >
       {children}

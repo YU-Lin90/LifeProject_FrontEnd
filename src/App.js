@@ -16,6 +16,9 @@ import LoginPage from './LoginPage';
 //氣象
 import Weather from './Weather';
 //===============================================分隔線================================================
+//行程表
+import Schedules from './Schedules';
+//===============================================分隔線================================================
 //404
 import NoFound from './NoFound';
 //===============================================分隔線================================================
@@ -34,6 +37,8 @@ function App() {
             <Route path="login" element={<LoginPage />} />
             {/* 氣象 */}
             <Route path="weather" element={<Weather />} />
+            {/* 行程表 */}
+            <Route path="schedule" element={<Schedules />} />
           </Route>
           {/* 404未找到的頁面路由，需放在最下方 */}
           <Route path="*" element={<NoFound />} />

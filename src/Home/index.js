@@ -1,7 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
 function Home() {
-
   const navi = useNavigate();
   return (
     <>
@@ -13,6 +12,14 @@ function Home() {
         }}
       >
         氣象預報
+      </p>
+      <p
+        className="flexSetCenter pointer"
+        onClick={() => {
+          navi('/schedule');
+        }}
+      >
+        行程表
       </p>
     </>
   );
