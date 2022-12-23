@@ -4,14 +4,16 @@ import { useFunc } from '../Context/FunctionProvider';
 import { useLaguage } from '../Context/LaguageProvider';
 import Swal from 'sweetalert2';
 import textPack from '../LanguageTexts';
+import Calender from './Calender';
 function Schedules() {
   const { pageLoginBlock, setPreviousPage } = useFunc();
   const { laguage } = useLaguage();
   const { goToLoginText } = textPack;
   const navi = useNavigate();
+  //檢查登入
   const checkLogin = async () => {
     const res = await pageLoginBlock();
-    console.log(res);
+    // console.log(res);
     if (!res) {
       const path = window.location.pathname;
       setPreviousPage(path);
@@ -23,6 +25,10 @@ function Schedules() {
   useEffect(() => {
     checkLogin();
   }, []);
-  return <>行程表</>;
+  return (
+    <>
+      <Calender />
+    </>
+  );
 }
 export default Schedules;

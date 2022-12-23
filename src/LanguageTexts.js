@@ -50,6 +50,46 @@ const accountLockAlertText = [
 //清空
 const clearText = ['清空', 'クリア', 'clear'];
 //===============================================分隔線================================================
+//日曆文字
+const calenderText = [
+  {
+    week: '週',
+    work_week: '週',
+    day: '日',
+    month: '月',
+    previous: '往前',
+    next: '往後',
+    today: '今日',
+    agenda: '明細',
+  },
+  {
+    week: '週',
+    work_week: '週',
+    day: '日',
+    month: '月',
+    previous: '前',
+    next: '次',
+    today: '今日',
+    agenda: '詳し',
+  },
+  {
+    date: 'Date',
+    time: 'Time',
+    event: 'Event',
+    allDay: 'All Day',
+    week: 'Week',
+    work_week: 'Work Week',
+    day: 'Day',
+    month: 'Month',
+    previous: 'Back',
+    next: 'Next',
+    yesterday: 'Yesterday',
+    tomorrow: 'Tomorrow',
+    today: 'Today',
+    agenda: 'Agenda',
+  },
+];
+//===============================================分隔線================================================
 
 const textPack = {
   languageText,
@@ -66,5 +106,6 @@ const textPack = {
   systemNetworkErrorAlertText,
   accountLockAlertText,
   goToLoginText,
+  calenderText,
 };
 export default textPack;
