@@ -1,5 +1,6 @@
 import React, { useContext, createContext, useState } from 'react';
 import siteAddress from '../AddressSetting';
+import Swal from 'sweetalert2';
 const FunctionContext = createContext(null);
 //常用的函式放在這裡管理
 export const FunctionProvider = ({ children }) => {
@@ -21,6 +22,8 @@ export const FunctionProvider = ({ children }) => {
     const res = await r.json();
     if (res.errorType && res.errorType === 'DisableToken') {
       localStorage.removeItem(who);
+    } else if (res.errorType && res.errorType === 'ServerError') {
+      Swal.fire('ServerError');
     }
     return res;
   };

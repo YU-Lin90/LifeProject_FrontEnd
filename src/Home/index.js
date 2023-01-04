@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-
+import UpdateData from './UpdateData';
 function Home() {
   const navi = useNavigate();
   return (
@@ -21,6 +21,7 @@ function Home() {
       >
         行程表
       </p>
+      {/* <UpdateData /> */}
     </>
   );
 }
