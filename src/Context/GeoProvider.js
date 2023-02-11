@@ -54,6 +54,27 @@ export const GeoProvider = ({ children }) => {
     return address;
   };
   //===============================================分隔線================================================
+  //傳入經緯度資訊  { lat, lng }  得到距離
+  const calculateDistanceByLatLng = (positionA, positionB) => {
+    const latDistance = positionA.lat - positionB.lat;
+    const lngDistance = positionA.lng - positionB.lng;
+    const getDistance =
+      6378.137 *
+      2 *
+      Math.asin(
+        Math.pow(
+          Math.sin(((latDistance / 2) * Math.PI) / 180) *
+            Math.sin(((latDistance / 2) * Math.PI) / 180) +
+            Math.cos((positionA.lat * Math.PI) / 180) *
+              Math.cos((positionB.lat * Math.PI) / 180) *
+              Math.sin(((lngDistance / 2) * Math.PI) / 180) *
+              Math.sin(((lngDistance / 2) * Math.PI) / 180),
+          0.5
+        )
+      );
+    return getDistance;
+  };
+  //===============================================分隔線================================================
   return (
     <GeoContext.Provider
       value={{
@@ -63,6 +84,7 @@ export const GeoProvider = ({ children }) => {
         getLatLngByAddress,
         getPosition,
         myAddress,
+        calculateDistanceByLatLng,
       }}
     >
       {children}

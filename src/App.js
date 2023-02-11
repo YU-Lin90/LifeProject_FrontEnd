@@ -19,6 +19,9 @@ import Weather from './Weather';
 //行程表
 import Schedules from './Schedules';
 //===============================================分隔線================================================
+//計數器
+import Counts from './Counts';
+//===============================================分隔線================================================
 //404
 import NoFound from './NoFound';
 //===============================================分隔線================================================
@@ -39,6 +42,8 @@ function App() {
             <Route path="weather" element={<Weather />} />
             {/* 行程表 */}
             <Route path="schedule" element={<Schedules />} />
+            {/* 計數器 */}
+            <Route path="counter" element={<Counts />} />
           </Route>
           {/* 404未找到的頁面路由，需放在最下方 */}
           <Route path="*" element={<NoFound />} />
